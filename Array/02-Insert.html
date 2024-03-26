@@ -1,25 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>insert Element</title>
     <script>
-        let arr = [3,4,5,6,7,8,9,34];
-        console.log(arr)
-        let newElement = 11;
-        let position = 3;
-        for(let i = arr.length-1; i>=position; i--){
-            if (i>=position) {
-                // console.log(arr[i]);
-                arr[i + 1] = arr[i];
-                if (i==position) {
-                    arr[i]=newElement;
-                }
+      let arr = [3, 4, 5, 6, 7, 8, 9, 34];
+      // console.log(arr)
+    //   let newElement = 11;
+    //   let position = 3;
+    //   for (let i = arr.length - 1; i >= position; i--) {
+    //     if (i >= position) {
+    //       // console.log(arr[i]);
+    //       arr[i + 1] = arr[i];
+    //       if (i == position) {
+    //         arr[i] = newElement;
+    //       }
+    //     }
+    //   }
+    //   console.log(arr);
+
+      const handleInsert = () => {
+        let newElement = document.querySelector("#inputEl").value;
+        let position = document.querySelector("#inputPos").value;
+        newElement = parseInt(newElement);
+        position = parseInt(position);
+
+        for (let i = arr.length - 1; i >= position; i--) {
+          if (i >= position) {
+            // console.log(arr[i]);
+            arr[i + 1] = arr[i];
+            if (i == position) {
+              arr[i] = newElement;
             }
+          }
         }
         console.log(arr);
+      };
     </script>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <input type="text" id="inputEl" placeholder="enter new element" />
+    <input type="text" id="inputPos" placeholder="enter position" />
+    <button onclick="handleInsert()">Insert</button>
+  </body>
 </html>
