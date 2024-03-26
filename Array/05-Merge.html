@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Merge Two Array</title>
+    <script>
+      // using for loop
+      // let arr1 = [2,3,4,34,22,55,67];
+      // let arr2 = [45,67,89,676];
+      // let arr3 = [];
+      // for (let i = 0; i < arr1.length; i++) {
+      //     arr3[i]=arr1[i];
+      // }
+      // for (let j = 0; j < arr2.length; j++) {
+      //     arr3[arr1.length+j]=arr2[j]
+      // }
+      // console.log(arr3)
+
+      // using while loop
+
+      // this method use only when arrays is sorted
+      let arr1 = [2, 3, 4, 14, 22, 55, 67];
+      let arr2 = [6, 16, 28, 33];
+      let arr3 = [];
+      let r1 = 0;
+      let r2 = 0;
+      let r3 = 0;
+
+      while (r1 < arr1.length && r2 < arr2.length) {
+        if (arr1[r1] < arr2[r2]) {
+          arr3[r3] = arr1[r1];
+          r1++;
+        } else {
+          arr3[r3] = arr2[r2];
+          r2++;
+        }
+        r3++;
+      }
+      while (r1<arr1.length) {
+        arr3[r3]=arr1[r1];
+        r1++;
+        r3++;
+      }
+      console.log(arr3)
+    </script>
+  </head>
+  <body></body>
+</html>
